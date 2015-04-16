@@ -3,7 +3,6 @@ from flask import Flask
 from project_flask import config
 from project_flask.first_app import first_app
 
-import logging
 from os import environ
 
 
@@ -18,16 +17,7 @@ def create_app(config=config.dev_config):
     register_jinja_env(app)
     register_extensions(app)
 
-    if app.config['LOGENABLE']:
-        register_logger(app)
-
     return app
-
-
-def register_logger(app):
-    logging.basicConfig(level=app.config['LOGLEVEL'])
-    log = logging.getLogger(__name__)
-    app.logger.addHandler(log)
 
 
 def register_blueprints(app):

@@ -7,7 +7,6 @@ class base_config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY')
     MEU_SALT = b"my preciousssssssssssssss"
     SECRET_KEY = os.urandom(24) + MEU_SALT
-    LOGLEVEL = 20
     LOGENABLE = True
 
 
